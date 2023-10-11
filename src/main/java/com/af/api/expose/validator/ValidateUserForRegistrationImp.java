@@ -1,10 +1,9 @@
-package com.af.api.expose.validator.imp;
+package com.af.api.expose.validator;
 
 import com.af.api.expose.annotation.ApiAfAnnotation;
 import com.af.api.expose.exception.BadEntityRequestException;
 import com.af.api.expose.exception.ErrorCodes;
 import com.af.api.expose.model.AfUser;
-import com.af.api.expose.validator.IValidateUserForRegistration;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

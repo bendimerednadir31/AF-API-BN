@@ -51,7 +51,7 @@ public interface Constants {
     /**
      * SECURITY CONFIGURATIONS CONSTANTS
      */
-    String SECURITY_CONF_H2 = "/h2-console/**";
+    String SECURITY_CONF_H2 = "/h2-afApiUser/**";
     String SECURITY_CONF_POST_REGISTER = "/api/v1/auth/register";
     String SECURITY_CONF_GET_USER_BY_ID = "/api/v1/auth/afUser/**";
     String SECURITY_CONF_SWAGGER_UI = "/swagger-ui/**";

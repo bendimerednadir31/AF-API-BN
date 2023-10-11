@@ -22,40 +22,36 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.any;
 
 
 @ExtendWith(MockitoExtension.class)
 public class AfUserServiceTest {
 
+    private static final String afUserNameTest = "test_user";
+    private static final String birthDatetest = "1993-06-02";
+    private static final String residenceCountryNameTest = "France";
+    private static final String phoneNumberTest = "0760128003";
+    private static final String genderTest = "Masculin";
+    private static final Integer idTest = 1;
     @Mock
     private IAfUserRepository iAfUserRepository;
-
     @Mock
     private ITokenRepository iTokenRepository;
-
     @Mock
     private IValidateUserForRegistration validateUserForRegistrationImp;
-
     @Mock
     private IJwtService iJwtService;
-
     @InjectMocks
     private AfUserServiceImp _afUSerService;
-
-    private static String afUserNameTest ="test_user";
-    private static String birthDatetest ="1993-06-02";
-    private static String residenceCountryNameTest ="France";
-    private static String phoneNumberTest ="0760128003";
-    private static String genderTest ="Masculin";
-    private static Integer idTest = 1;
     private RegisterRequest registerRequest;
     private AfUser afUser;
     private UserDetailsResponse userDetailsResponse;
-    private AuthenticationResponse authResponse;
 
     @BeforeEach
-    public void init(){
+    public void init() {
         registerRequest = RegisterRequest
                 .builder()
                 .afUserName(afUserNameTest)
@@ -84,7 +80,7 @@ public class AfUserServiceTest {
     }
 
     @Test
-    public void registerNewAfUser() throws Exception{
+    public void registerNewAfUser() throws Exception {
         doNothing().when(validateUserForRegistrationImp).checkIfValidateUser(afUser);
         when(iAfUserRepository.save(Mockito.any(AfUser.class))).thenReturn(afUser);
         when(iJwtService.generateToken(afUser.getAfUserName())).thenReturn("token");
@@ -98,7 +94,7 @@ public class AfUserServiceTest {
     }
 
     @Test
-    public void getAfUserById() throws Exception{
+    public void getAfUserById() throws Exception {
         when(iAfUserRepository.findById(idTest)).thenReturn(Optional.of(afUser));
         UserDetailsResponse response = _afUSerService.getUserById(idTest);
         assertNotNull(response);

@@ -15,7 +15,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-import static com.af.api.expose.utils.Constants.*;
+import static com.af.api.expose.utils.Constants.JWT_AUTH_HEADER;
+import static com.af.api.expose.utils.Constants.JWT_BEARER;
+import static com.af.api.expose.utils.Constants.JWT_SUB_AUTH_HEADER;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {

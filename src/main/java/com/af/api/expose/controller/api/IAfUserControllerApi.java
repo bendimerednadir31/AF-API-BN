@@ -12,7 +12,23 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import static com.af.api.expose.utils.Constants.*;
+import static com.af.api.expose.utils.Constants.TAG_CONTROLLER;
+import static com.af.api.expose.utils.Constants.API_REGISTER_USER_VALUE;
+import static com.af.api.expose.utils.Constants.API_REGISTER_USER_NOTE;
+import static com.af.api.expose.utils.Constants.HTTP_RESPONSE_200;
+import static com.af.api.expose.utils.Constants.API_USER_CREATED_SUCCEFULLY_MESSAGE;
+import static com.af.api.expose.utils.Constants.HTTP_RESPONSE_400;
+import static com.af.api.expose.utils.Constants.API_BAD_REQUEST_MESSAGE;
+import static com.af.api.expose.utils.Constants.HTTP_RESPONSE_500;
+import static com.af.api.expose.utils.Constants.API_POST_USER_EXIST_BDD;
+import static com.af.api.expose.utils.Constants.API_GET_USER_BY_ID_VALUE;
+import static com.af.api.expose.utils.Constants.API_GET_USER_BY_ID_NOTE;
+import static com.af.api.expose.utils.Constants.API_USER_FOUND_MESSAGE;
+import static com.af.api.expose.utils.Constants.HTTP_RESPONSE_404;
+import static com.af.api.expose.utils.Constants.API_USER_NOT_FOUND_MESSAGE;
+import static com.af.api.expose.utils.Constants.HTTP_RESPONSE_403;
+import static com.af.api.expose.utils.Constants.API_GET_NOT_VALID_TOKEN;
+
 
 @Tag(name = TAG_CONTROLLER)
 public interface IAfUserControllerApi {

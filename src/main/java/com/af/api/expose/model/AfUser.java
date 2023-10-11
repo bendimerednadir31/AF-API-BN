@@ -1,6 +1,10 @@
 package com.af.api.expose.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,7 +32,4 @@ public class AfUser {
     private String phoneNumber;
     @Column(nullable = true)
     private String gender;
-
-    public AfUser(String nadir, String date, String france, Object o, Object o1) {
-    }
 }

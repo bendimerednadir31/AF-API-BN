@@ -11,18 +11,19 @@ import org.springframework.test.util.ReflectionTestUtils;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class JwtServiceTest {
+    private static final String afUserName = "testAfUserName";
     @InjectMocks
     private JwtService jwtService;
     @Value("${af.secretKey}")
     private String secretKey;
     @Value("${af.security.jwt.expiration}")
     private long jwtExpiration;
-    private static final String afUserName ="testAfUserName";
 
     @BeforeEach
     void setUp() {
