@@ -7,8 +7,9 @@ public interface IAfUserInfoUserDetailsService {
 
     /**
      * Method to load user by name
+     *
      * @param userName
      * @return user details
      */
-    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException;
+    UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException;
 }

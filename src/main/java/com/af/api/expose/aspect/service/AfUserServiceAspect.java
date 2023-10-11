@@ -12,14 +12,15 @@ import static com.af.api.expose.utils.Constants.AOP_AF_USER_SERVICE_PATH;
 @Component
 public class AfUserServiceAspect {
     @Pointcut(AOP_AF_USER_SERVICE_PATH)
-    public void startAfUserService(){}
+    public void startAfUserService() {
+    }
 
     @Around(AOP_AF_USER_SERVICE_MAIN_METHOD)
     public Object afUserServiceSteps(ProceedingJoinPoint afUserService) throws Throwable {
-       afUserService.getArgs();
+        afUserService.getArgs();
         try {
             return afUserService.proceed();
-        } catch (Exception exception) {;
+        } catch (Exception exception) {
             throw exception;
         }
     }

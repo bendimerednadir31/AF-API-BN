@@ -30,27 +30,24 @@ public class ValidateUserForRegistrationImp implements IValidateUserForRegistrat
     private String invalidUserMessage;
 
     @ApiAfAnnotation
-    public void checkIfValidateUser(AfUser afUser)
-    {
-        if(afUser.getAfUserName() == null
-                    || afUser.getResidenceCountryName() == null
-                    || afUser.getBirthDate() == null
+    public void checkIfValidateUser(AfUser afUser) {
+        if (afUser.getAfUserName() == null
+                || afUser.getResidenceCountryName() == null
+                || afUser.getBirthDate() == null
         ) {
             throw new BadEntityRequestException(notNullEntityAttribute, ErrorCodes.ENTITY_ATTRIBUTE_NULL);
         }
-        if(afUser.getAfUserName().isBlank()
+        if (afUser.getAfUserName().isBlank()
                 || afUser.getResidenceCountryName().isBlank()
         ) {
             throw new BadEntityRequestException(notEmptyEntityAttribute, ErrorCodes.ENTITY_ATTRIBUTE_EMPTY);
         }
-        if(!checkUserCountry(afUser) || !isAdulte(afUser))
-        {
-            throw new BadEntityRequestException(invalidUserMessage , ErrorCodes.ENTITY_ATTRIBUTE_NOT_VALID);
+        if (!checkUserCountry(afUser) || !isAdulte(afUser)) {
+            throw new BadEntityRequestException(invalidUserMessage, ErrorCodes.ENTITY_ATTRIBUTE_NOT_VALID);
         }
     }
 
-    private Boolean checkUserCountry(AfUser afUser)
-    {
+    private Boolean checkUserCountry(AfUser afUser) {
         return afUser.getResidenceCountryName().equalsIgnoreCase(countryName);
     }
 

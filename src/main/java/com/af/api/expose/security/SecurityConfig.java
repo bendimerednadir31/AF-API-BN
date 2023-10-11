@@ -2,6 +2,7 @@ package com.af.api.expose.security;
 
 import com.af.api.expose.annotation.ApiAfAnnotation;
 import com.af.api.expose.auth.JwtAuthenticationFilter;
+import com.af.api.expose.config.AfUserInfoUserDetailsService;
 import com.af.api.expose.utils.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +16,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import com.af.api.expose.config.AfUserInfoUserDetailsService;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
@@ -33,7 +33,7 @@ public class SecurityConfig {
     @ApiAfAnnotation
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-       return http
+        return http
                 .csrf().disable()
                 .authorizeHttpRequests(req ->
                         req.requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_H2)).permitAll()
@@ -41,8 +41,8 @@ public class SecurityConfig {
                                 .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_GET_USER_BY_ID)).authenticated()
                                 .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_SWAGGER_UI)).permitAll()
                                 .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_SWAGGER_UI_HTML)).permitAll()
-                                .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_API_DOCS_1 )).permitAll()
-                                .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_API_DOCS_2 )).permitAll()
+                                .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_API_DOCS_1)).permitAll()
+                                .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_API_DOCS_2)).permitAll()
                                 .requestMatchers(AntPathRequestMatcher.antMatcher(Constants.SECURITY_CONF_ERROR)).permitAll()
                                 .anyRequest().permitAll()
                 )
@@ -57,7 +57,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setUserDetailsService(userDetailsService());
         return authenticationProvider;

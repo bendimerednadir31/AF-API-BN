@@ -13,14 +13,15 @@ import static com.af.api.expose.utils.Constants.AOP_AF_USER_CONTROLLER_PATH;
 @Component
 public class AfUserControllerAspect {
     @Pointcut(AOP_AF_USER_CONTROLLER_PATH)
-    public void startAfUserController(){}
+    public void startAfUserController() {
+    }
 
     @Around(AOP_AF_USER_CONTROLLER_MAIN_METHOD)
     public Object afUserRegistrationSteps(ProceedingJoinPoint afUserRegistration) throws Throwable {
         afUserRegistration.getArgs();
         try {
             return afUserRegistration.proceed();
-        } catch (Exception exception) {;
+        } catch (Exception exception) {
             throw exception;
         }
     }

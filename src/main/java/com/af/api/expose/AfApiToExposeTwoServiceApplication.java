@@ -9,7 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 public class AfApiToExposeTwoServiceApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AfApiToExposeTwoServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AfApiToExposeTwoServiceApplication.class, args);
+    }
 }

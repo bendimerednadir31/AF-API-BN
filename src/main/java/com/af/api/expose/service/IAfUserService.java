@@ -8,15 +8,17 @@ public interface IAfUserService {
 
     /**
      * Method to register new user
+     *
      * @param request
      * @return token
      */
-    public AuthenticationResponse registerAfUser(RegisterRequest request);
+    AuthenticationResponse registerAfUser(RegisterRequest request);
 
     /**
      * Method to get user by id
+     *
      * @param id
      * @return user details
      */
-    public UserDetailsResponse getUserById(int id);
+    UserDetailsResponse getUserById(int id);
 }

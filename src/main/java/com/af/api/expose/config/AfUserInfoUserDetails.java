@@ -7,10 +7,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 public class AfUserInfoUserDetails implements UserDetails {
-    private String name;
+    private final String name;
 
     public AfUserInfoUserDetails(AfUser afUser) {
-        name=afUser.getAfUserName();
+        name = afUser.getAfUserName();
     }
 
     @Override

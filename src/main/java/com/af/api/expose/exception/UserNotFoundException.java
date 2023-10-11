@@ -2,8 +2,8 @@ package com.af.api.expose.exception;
 
 import lombok.Getter;
 
-public class UserNotFoundException extends RuntimeException{
-    @Getter
+@Getter
+public class UserNotFoundException extends RuntimeException {
     private ErrorCodes errorCode;
 
     public UserNotFoundException(String message) {

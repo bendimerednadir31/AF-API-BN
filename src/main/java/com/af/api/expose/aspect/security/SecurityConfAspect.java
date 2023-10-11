@@ -14,7 +14,8 @@ import static com.af.api.expose.utils.Constants.AOP_SECURITY_CONF_MAIN_METHOD;
 public class SecurityConfAspect {
 
     @Pointcut(ANNOTATION_PATH)
-    public void securityAspect(){}
+    public void securityAspect() {
+    }
 
     @Around(AOP_SECURITY_CONF_MAIN_METHOD)
     public Object securityAspect(ProceedingJoinPoint securityConf) throws Throwable {

@@ -6,15 +6,16 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-import static com.af.api.expose.utils.Constants.AOP_JWT_SERVICE_MAIN_METHOD;
 import static com.af.api.expose.utils.Constants.ANNOTATION_PATH;
+import static com.af.api.expose.utils.Constants.AOP_JWT_SERVICE_MAIN_METHOD;
 
 @Aspect
 @Component
 public class JwtServiceAspect {
 
     @Pointcut(ANNOTATION_PATH)
-    public void jwtService(){}
+    public void jwtService() {
+    }
 
     @Around(AOP_JWT_SERVICE_MAIN_METHOD)
     public Object jwtService(ProceedingJoinPoint jwtServiceAsp) throws Throwable {

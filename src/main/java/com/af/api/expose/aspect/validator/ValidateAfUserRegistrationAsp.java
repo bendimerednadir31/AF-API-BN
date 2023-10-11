@@ -14,7 +14,8 @@ import static com.af.api.expose.utils.Constants.AOP_VALIDATE_USER_INFORMATION_MA
 public class ValidateAfUserRegistrationAsp {
 
     @Pointcut(ANNOTATION_PATH)
-    public void validateAfUserInfo(){}
+    public void validateAfUserInfo() {
+    }
 
     @Around(AOP_VALIDATE_USER_INFORMATION_MAIN_METHOD)
     public Object validateAfUserInfo(ProceedingJoinPoint validateAfUserAsp) throws Throwable {
