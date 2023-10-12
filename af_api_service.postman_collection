@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "1df4ac4d-d117-4da6-b4e7-13c89aca9c74",
+		"name": "AF USER REGISTRATION API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30442089",
+		"_collection_link": "https://galactic-capsule-138262.postman.co/workspace/ea723326-1621-4de2-8acf-c1d391a8539d/collection/30442089-1df4ac4d-d117-4da6-b4e7-13c89aca9c74?action=share&source=collection_link&creator=30442089"
+	},
+	"item": [
+		{
+			"name": "POST NEW USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"afUserName\": \"tttt\",\r\n  \"birthDate\": \"1993-02-06\",\r\n  \"residenceCountryName\": \"France\",\r\n  \"phoneNumber\": \"\",\r\n  \"gender\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET NEW USER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/afUser/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"afUser",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
